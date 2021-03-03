@@ -1,0 +1,70 @@
+{{ $id := .Get "id" }}
+{{ $service := .Get "service" }}
+{{ $input := .Get "input" }}
+{{ $output := .Get "output" }}
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 700px; /* Should be removed. Only for demonstration */
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    
+<!-- <div>
+    <h4>Input:</h4>
+    {{ if .Get "inputImage"}}<img src="{{.Get "inputImage"}}" style="height:450px;" />{{ else }}
+    <div>{{$input}}</div>{{ end }}
+</div> -->
+
+
+<!-- <div id="output" style="display: none;">
+    <h4>Output:</h4>
+    {{ if .Get "outputImage"}}<img src="{{.Get "outputImage"}}" style="height:600px;" />{{ else }}
+    <div>{{$output}}</div>{{ end }}
+</div> -->
+
+<div class="row">
+  <div class="column">
+    <h4>Input:</h4>
+    <div>
+        {{ if .Get "inputImage"}}<img src="{{.Get "inputImage"}}" style="height:600px;" />{{ else }}
+        <div>{{$input}}</div>{{ end }}
+    </div>
+  </div>
+  <div  class="column" >
+    <h4>Output:</h4>
+    <div id="{{.Get "id"}}" style="display: none;">
+        {{ if .Get "outputImage"}}<img src="{{.Get "outputImage"}}" style="height:600px;" />{{ else }}
+        <div>{{$output}}</div>{{ end }}
+    </div>
+  </div>
+</div>
+
+<br/>
+<button onclick="showoutput()">Run</button>
+
+<script>
+function showoutput() {
+//   var x = document.getElementById("output");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+    $("#{{.Get "id"}}").slideToggle();
+}
+</script>

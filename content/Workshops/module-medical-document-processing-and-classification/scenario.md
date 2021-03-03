@@ -1,7 +1,7 @@
 +++
 title = "1. Architecture"
 date = 2019-11-18T17:11:28+11:00
-weight =5
+weight =4
 +++
 
 ### Solution Architecture
@@ -25,4 +25,4 @@ Once you have implemented your data pipeline, you will learn how to use SageMake
 5. Run inference on your deployed model
 
 ### Next Steps
-Click [here](../step0/) to setup your notebook.
+Click [here](../demo/) to setup your notebook.

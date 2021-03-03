@@ -1,5 +1,5 @@
 +++
-title = "5. Build, Train and Deploy a classification model using Amazon Sagemaker"
+title = "6. Build, Train and Deploy a classification model using Amazon Sagemaker"
 date = 2019-11-18T17:11:28+11:00
 weight =10
 +++
